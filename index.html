@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/index.js"></script>
+
+    <title>El tiempo</title>
+    <!--LINK Estilos-->
+    <link rel="stylesheet" href="css/estilo.css">
+    <!--LINK CON JQUERY-->
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <!--CAMBIA EL ICONO DE LA PESTAÑA-->
+    <link rel="shortcut icon" type="image/x-icon" href="img/sol.ico">
+
+
+    <script src="js/Lugar.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#lugar").on('keyup', function (e) {
+                if (e.key === 'Enter' || e.keyCode === 13) {
+                    ejecutarLlamadaUbicacion();
+                }
+            });
+        });
+    </script>
+</head>
+
+<body onload="geoIP()">
+    <div id="herramientas">
+        <br>
+        <table class="tablarriba">
+            <tr id="barraprincipal">
+                <td class="logo"><a href="index.html"><img class="logo" src="img/logo.png" alt=""></a></td>
+                <td><input type="text" id="lugar" class="buscador" placeholder="Buscar por Ciudad"> </td>
+                <td onclick="funcionFavoritos()"> <img alt="FAVORITOS" class="favoritoslogo" src="img/cora.png" alt="">
+                </td>
+            </tr>
+        </table>
+        <br>
+    </div>
+    <hr>
+    <div id="contenedorgrande">
+    </div>
+
+
+    <div id="contenedorpequeño">
+    </div>
+
+    <footer id="footer">
+       
+        <table>
+            <td bgcolor="#2062AF">
+                <p>Victor Sainz</p>
+                <p> <a href="mailto:sainzg.victor@gmail.com">sainzg.victor@gmail.com</a></p>
+            </td>
+            <td bgcolor="#05BDB0">
+                 <a href="https://www.linkedin.com/in/victor-sainz-599b80151/">LINKEDIN</a>
+            </td>
+        </table>
+    </footer>
+</body>
+
+</html>

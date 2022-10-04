@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+* {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+body {
+    background-image: url(/img/footer.jpg);
+    background-repeat: repeat-x;
+}
+.saludo h1,h2{
+    
+    font-family: 'Lobster', cursive;
+}
+.saludo h1{
+    font-size: 440%;
+}
+
+
+/*PARTE DE ARRIBA*/
+#herramientas {
+    background-color: rgb(139, 236, 228);
+    opacity: 0, 55;
+    align-content: center;
+    height: 80px;
+    background-image: url(/img/111.jpg);
+}
+.rounded {
+    border-radius: 4px;
+    background-color: #98cfe9;
+    margin-left: 5%;
+}
+.buscador {
+    background-color: #98cfe9;
+    border-radius: 4px;
+    border: 1px solid #2326cc;
+    display: inline-block;
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #5b8a3c;
+    width: 99%;
+    height: 35px;
+}
+.logo {
+    width: 110px;
+    padding-top: 2px;
+}
+.tablarriba {
+    border-color: #ccc;
+    width: 100%;
+}
+
+/*PARTE DE FAVORITOS*/
+#contenedorgrande {
+
+    background-color: rgba(192, 236, 233, 0.548);
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+}
+.divcordenadas {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(40, 159, 238, 0.603);
+    border-radius: 20px;
+    border: 1px solid #000000;
+    margin: 10px;
+    position: relative;
+    text-align: center;
+}
+#contenedorpequeño {
+    align-items: center;
+    text-align: center
+}
+.mitabla {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+.imagengrandefav {
+    width: 70px;
+}
+.bandera {
+    padding-left: 1px;
+    width: 20px;
+    height: 13px;
+}
+.imggrande {
+    width: 40%;
+}
+.imgpequena {
+    align-self: center;
+    width: 100%;
+}
+
+
+/*CSS CORAZONES*/
+.favoritos {
+    height: 13px;
+    padding-right: 1px;
+}
+.favoritoslogo {
+    height: 23px;
+    padding-right: 1px;
+}
+.cora2 {
+    height: 13px;
+    padding-right: 1%;
+}
+.cora {
+    height: 13px;
+    padding-right: 1%;
+}
+
+/*FOOTER*/
+#footer{
+    background-color: rgb(139, 236, 228);
+    position: relative;
+    text-align: center;
+    
+}
+ #footer table{
+    width: 100%;
+   
+}
+
+
+@media screen and (min-width: 100px) and (max-width: 500px) {
+
+    h1,
+    h2,
+    h3 {
+        font-size: 80%;
+    }
+
+    .bandera {
+        padding-left: 1px;
+        width: 15px;
+        height: 9px;
+    }
+
+    .mitabla {
+        background-color: rgba(30, 143, 255, 0.137);
+
+        border-radius: 50px;
+    }
+
+    .imgpequena {
+        align-self: center;
+        width: 50%;
+    }
+
+    .imagengrandefav {
+        width: 40px;
+    }
+
+    #contenedorgrande {
+
+        background-color: rgba(192, 236, 233, 0.548);
+        border-radius: 20px;
+        position: relative;
+        text-align: center;
+
+    }
+
+    .divcordenadas {
+        display: inline-block;
+        width: 120px;
+        height: 120px;
+        background-color: rgba(40, 159, 238, 0.603);
+        border-radius: 20px;
+        border: 1px solid #000000;
+        margin: 5px;
+        position: relative;
+        text-align: center;
+    }
+
+    #contenedorpequeño {
+        align-items: center;
+        text-align: center
+    }
+
+    .cora2 {
+        height: 7px;
+        padding-right: 1%;
+    }
+
+    .cora {
+        height: 7px;
+        padding-right: 1%;
+    }
+}
+@media screen and (min-width: 500px) and (max-width: 1300px) {
+
+    /*PARTE DE FAVORITOS*/
+#contenedorgrande {
+
+    background-color: rgba(192, 236, 233, 0.548);
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+
+}
+
+.divcordenadas {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(40, 159, 238, 0.603);
+    border-radius: 40px;
+    border: 1px solid #000000;
+    margin: 10px;
+    position: relative;
+    text-align: center;
+}
+
+#contenedorpequeño {
+    align-items: center;
+    text-align: center
+}
+
+.mitabla {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    background-color: rgba(30, 143, 255, 0.137);
+    
+}
+
+.imagengrandefav {
+    width: 70px;
+}
+
+.bandera {
+    padding-left: 1px;
+    width: 20px;
+    height: 13px;
+}
+
+.imggrande {
+    width: 40%;
+}
+
+.imgpequena {
+    align-self: center;
+    width: 100%;
+}
+
+/*CSS CORAZONES*/
+.favoritos {
+    height: 13px;
+    padding-right: 1px;
+}
+
+.favoritoslogo {
+    height: 23px;
+    padding-right: 1px;
+}
+
+.cora2 {
+    height: 13px;
+    padding-right: 1%;
+}
+
+.cora {
+    height: 13px;
+    padding-right: 1%;
+}
+#contenidos th{
+    font-size: 180%;
+    padding-right: 60px;
+    background-color: #24bbe942;
+    border-radius: 10px;
+}
+}
+@media screen and (min-width: 1301px) and (max-width: 2500px) {
+    h1,
+    h2,
+    h3 {
+        font-size: 240%;
+    }
+
+    .bandera {
+        padding-left: 1px;
+        width: 30px;
+        height: 18px;
+    }
+
+    .mitabla {
+        background-color: rgba(30, 143, 255, 0.137);
+        border-radius: 5px;
+    }
+
+    .imgpequena {
+        align-self: center;
+        width: 150px;
+    }
+
+    .imagengrandefav {
+        width: 300px;
+    }
+
+    #contenedorgrande {
+
+        background-color: rgba(192, 236, 233, 0.548);
+        border-radius: 80px;
+        position: relative;
+        text-align: center;
+
+    }
+
+    .divcordenadas {
+        display: inline-block;
+        width: 500px;
+        height: 500px;
+        background-color: rgba(40, 159, 238, 0.603);
+        border-radius: 80px;
+        border: 1px solid #000000;
+        margin: 15px;
+        position: relative;
+        text-align: center;
+    }
+
+    #contenedorpequeño {
+        align-items: center;
+        text-align: center
+    }
+
+    .cora2 {
+        height: 70px;
+        padding-right: 1%;
+        padding-top: 30px;
+    }
+
+    .cora {
+        height: 70px;
+        padding-right: 1%;
+        padding-top: 30px;
+    }
+    #contenidos td{
+        font-size: 280%;
+        padding-right: 100px;
+    }
+
+}

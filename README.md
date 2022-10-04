@@ -1,2 +1,2 @@
-# Eltiempo
- Prueba tecnica para ver el manejo de HTML,JAVASCRIPT,CSS...
+# PRUEBATECNICA
+ 
