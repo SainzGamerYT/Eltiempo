@@ -237,7 +237,7 @@ h2 {
         width: 200px;
         height: 200px;
         background-color: rgba(40, 159, 238, 0.603);
-        border-radius: 40px;
+        
         border: 1px solid #000000;
         margin: 10px;
         position: relative;
@@ -336,9 +336,14 @@ h2 {
     #contenedorgrande {
 
         background-color: rgba(192, 236, 233, 0.548);
-        border-radius: 80px;
+        border-radius: 20px;
         position: relative;
         text-align: center;
+
+
+    }#contenedorgrande h1 {
+
+        font-size: 170%;
 
     }
 
