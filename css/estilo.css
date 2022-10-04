@@ -129,7 +129,10 @@ body {
 }
 
 @media screen and (min-width: 100px) and (max-width: 500px) {
-
+    .saludo h1{
+        font-size: 110%;
+    }
+    
     h1,
     h2,
     h3 {
@@ -194,7 +197,10 @@ body {
     }
 }
 @media screen and (min-width: 500px) and (max-width: 1300px) {
-
+    .saludo h1{
+        font-size: 240%;
+    }
+    
     /*PARTE DE FAVORITOS*/
 #contenedorgrande {
 
