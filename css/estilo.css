@@ -4,8 +4,9 @@
     padding: 0px;
 }
 body {
-    background-image: url(https://i.imgur.com/wC6ODQB.jpeg);
-    background-repeat: repeat-x;
+    
+    background-image: url(https://i.imgur.com/fXWYoAI.jpeg);
+    
 }
 .saludo h1,h2{
     
@@ -22,7 +23,8 @@ body {
     opacity: 0, 55;
     align-content: center;
     height: 80px;
-    background-image: url(https://i.imgur.com/fXWYoAI.jpeg);
+    background-image: url(https://i.imgur.com/wC6ODQB.jpeg);
+    
 }
 .rounded {
     border-radius: 4px;
