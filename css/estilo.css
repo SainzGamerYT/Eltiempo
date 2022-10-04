@@ -2,11 +2,9 @@
 * {
     margin: 0px;
     padding: 0px;
-
 }
-
 body {
-    background-image: url(/img/footer.jpg);
+    background-image: url(https://i.imgur.com/wC6ODQB.jpeg);
     background-repeat: repeat-x;
 }
 .saludo h1,h2{
@@ -24,7 +22,7 @@ body {
     opacity: 0, 55;
     align-content: center;
     height: 80px;
-    background-image: url(/img/111.jpg);
+    background-image: url(https://i.imgur.com/fXWYoAI.jpeg);
 }
 .rounded {
     border-radius: 4px;
