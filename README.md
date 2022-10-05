@@ -1,5 +1,7 @@
 #  EL TIEMPO -PRUEBATECNICA
 Este proyecto trata sobre recrear la app del tiempo típica en todos los dispositivos. Mediante la cual tu le dices un nombre de una ciudad y te ubica, dandote los datos necesarios para mostrar diariamente o en una tabla de 5 dias en temporalidad de cada 3h. Las tecnologias principales usadas son JavaScript,Html y Css.
+<br>
+LINK --> https://sainzgameryt.github.io/Eltiempo/
 
 
 # Versiones
