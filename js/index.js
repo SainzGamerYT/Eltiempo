@@ -22,7 +22,7 @@ function ejecutarLlamadaUbicacion() {
         }
     }
     request.overrideMimeType("text/plain");
-    request.open("GET", "http://api.openweathermap.org/geo/1.0/direct?q=" + ciudad + "&limit=1&appid=" + apikey, true);
+    request.open("GET", "https://api.openweathermap.org/geo/1.0/direct?q=" + ciudad + "&limit=1&appid=" + apikey, true);
 
     request.setRequestHeader('Content-type',
         'application/x-www-form-urlencoded');
@@ -50,8 +50,8 @@ function ejecutarLlamadaTiempo(datos) {
         }
     }
     request.overrideMimeType("text/plain");
-    request.open("GET", "http://api.openweathermap.org/data/2.5/weather?&lang=es&units=metric&lat=" + lat + "&lon=" + lon + "&appid=" + apikey, true);
-    //POR 3h request.open("GET", "http://api.openweathermap.org/data/2.5/forecast?&lang=es&units=metric&lat="+lat+"&lon="+lon+"&appid="+apikey, true);
+    request.open("GET", "https://api.openweathermap.org/data/2.5/weather?&lang=es&units=metric&lat=" + lat + "&lon=" + lon + "&appid=" + apikey, true);
+    //POR 3h request.open("GET", "https://api.openweathermap.org/data/2.5/forecast?&lang=es&units=metric&lat="+lat+"&lon="+lon+"&appid="+apikey, true);
     request.setRequestHeader('Content-type',
         'application/x-www-form-urlencoded');
     request.send();
@@ -81,7 +81,7 @@ function ejecutarLlamadaTiempo3h(datos) {
         }
     }
     request.overrideMimeType("text/plain");
-    request.open("GET", "http://api.openweathermap.org/data/2.5/forecast?&lang=es&units=metric&lat=" + lat + "&lon=" + lon + "&appid=" + apikey, true);
+    request.open("GET", "https://api.openweathermap.org/data/2.5/forecast?&lang=es&units=metric&lat=" + lat + "&lon=" + lon + "&appid=" + apikey, true);
     request.setRequestHeader('Content-type',
         'application/x-www-form-urlencoded');
     request.send();
@@ -101,7 +101,7 @@ function pintarHtml1(datos, lon, lat) {
     datos.weather.forEach(element => {
         imagen = element.icon;
     });
-    var iconurl = "http://openweathermap.org/img/w/" + imagen + ".png";
+    var iconurl = "https://openweathermap.org/img/w/" + imagen + ".png";
     var nombre = datos.name;
     var tem_max = datos.main.temp;
     var tem_min = datos.main.temp_min;
@@ -148,7 +148,7 @@ function pintarHtml2(datos) {
         var humedad = element.main.humidity;
         element.weather.forEach(element => {
             var icono = element.icon;
-            var iconurl = "http://openweathermap.org/img/w/" + icono + ".png";
+            var iconurl = "https://openweathermap.org/img/w/" + icono + ".png";
             $("#contenidos").append('<tr> <td>' + dt.substring(8, 10) + '</td> <td>' + dt.substring(11, 16) + '</td><td>' + Math.trunc(tem_max) + "º/" + Math.trunc(tem_min) + 'º</td><td>' + humedad + '%</td><td><img class="imgpequena"src="' + iconurl + '" alt=""></td></tr>');
         });
     });
@@ -217,8 +217,8 @@ function funcionLlamadaHtmlFavoritos(lat, lon,nombre,tem_max,tem_min,humedad,cod
         }
     }
     request.overrideMimeType("text/plain");
-    request.open("GET", "http://api.openweathermap.org/data/2.5/weather?&lang=es&units=metric&lat=" + latitud + "&lon=" + longitud + "&appid=" + apikey, true);
-    //POR 3h request.open("GET", "http://api.openweathermap.org/data/2.5/forecast?&lang=es&units=metric&lat="+lat+"&lon="+lon+"&appid="+apikey, true);
+    request.open("GET", "https://api.openweathermap.org/data/2.5/weather?&lang=es&units=metric&lat=" + latitud + "&lon=" + longitud + "&appid=" + apikey, true);
+    //POR 3h request.open("GET", "https://api.openweathermap.org/data/2.5/forecast?&lang=es&units=metric&lat="+lat+"&lon="+lon+"&appid="+apikey, true);
     request.setRequestHeader('Content-type',
         'application/x-www-form-urlencoded');
     request.send();
@@ -232,7 +232,7 @@ function funcionPintarHtmlFavoritos(datos, lon, lat) {
     datos.weather.forEach(element => {
         imagen = element.icon;
     });
-    var iconurl = "http://openweathermap.org/img/w/" + imagen + ".png";
+    var iconurl = "https://openweathermap.org/img/w/" + imagen + ".png";
     var nombre = datos.name;
     var tem_max = datos.main.temp;
     var tem_min = datos.main.temp_min;
@@ -294,7 +294,7 @@ function pintarHTMLBienvenida(posicion) {
                 datos.weather.forEach(element => {
                     imagen = element.icon;
                 });
-                var iconurl = "http://openweathermap.org/img/w/" + imagen + ".png";
+                var iconurl = "https://openweathermap.org/img/w/" + imagen + ".png";
                 var nombre = datos.name;
                 var tem_max = datos.main.temp;
                 var tem_min = datos.main.temp_min;
@@ -311,7 +311,7 @@ function pintarHTMLBienvenida(posicion) {
         }
     }
     request.overrideMimeType("text/plain");
-    request.open("GET", "http://api.openweathermap.org/data/2.5/weather?&lang=es&units=metric&lat=" + posicion.coords.latitude + "&lon=" + posicion.coords.longitude + "&appid=" + apikey, true);
+    request.open("GET", "https://api.openweathermap.org/data/2.5/weather?&lang=es&units=metric&lat=" + posicion.coords.latitude + "&lon=" + posicion.coords.longitude + "&appid=" + apikey, true);
     request.setRequestHeader('Content-type',
         'application/x-www-form-urlencoded');
     request.send();
