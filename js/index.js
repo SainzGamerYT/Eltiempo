@@ -16,10 +16,8 @@ function ejecutarLlamadaUbicacion() {
                 var jsonDatos = JSON.parse(datos);
                 ejecutarLlamadaTiempo(jsonDatos);
                 ejecutarLlamadaTiempo3h(jsonDatos)
-                console.log(jsonDatos);
             } else {
                 alert("Nombre no encontrado, busque de nuevo")
-                console.log("ERROR");
             }
         }
     }
@@ -34,7 +32,6 @@ function ejecutarLlamadaUbicacion() {
 function ejecutarLlamadaTiempo(datos) {
     var lat;
     var lon;
-    console.log(datos)
     datos.forEach(element => {
         lat = element.lat;
         lon = element.lon;
@@ -46,10 +43,8 @@ function ejecutarLlamadaTiempo(datos) {
             if (request.status == 200) {
                 var datos = request.responseText;
                 var jsonDatos = JSON.parse(datos);
-                console.log(jsonDatos);
                 pintarHtml1(jsonDatos, lon, lat);
             } else {
-                console.log("ERROR");
                 alert("Error al cargar o Nombre no encontrado, busque de nuevo")
             }
         }
@@ -73,8 +68,6 @@ function ejecutarLlamadaTiempo3h(datos) {
 
     });
 
-
-    console.log(lat, lon)
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (request.readyState == 4) {
@@ -84,7 +77,6 @@ function ejecutarLlamadaTiempo3h(datos) {
                 pintarHtml2(jsonDatos);
             } else {
                 alert("No se ha podido cargar los datos correspondientes a los proximos 5 dias o no se ha encontrado la ciudad");
-                console.log("ERROR");
             }
         }
     }
@@ -109,7 +101,6 @@ function pintarHtml1(datos, lon, lat) {
     datos.weather.forEach(element => {
         imagen = element.icon;
     });
-    console.log(imagen)
     var iconurl = "http://openweathermap.org/img/w/" + imagen + ".png";
     var nombre = datos.name;
     var tem_max = datos.main.temp;
@@ -148,7 +139,6 @@ function pintarHtml1(datos, lon, lat) {
 }
 //PINTA LOS DATOS DE EJECUTARLLAMADATIEMPO3H() QUE SON LOS CORRESPONDIENTES A 5DIA Y ESTA EN LA PARTE POSTERIOR
 function pintarHtml2(datos) {
-    console.log(datos);
     $("#contenedorpequeño").html("");
     $("#contenedorpequeño").append('<table class="mitabla" align="center" id="contenidos"><td>Dia</td><td>Hora</td><td>Temperatura</td><td>Humedad</td><td>Nubes</td></table>');
     datos.list.forEach(element => {
@@ -181,7 +171,6 @@ function guardarLocalStorage(lat, lon,nombre,tem_max,tem_min,humedad,codigo) {
 function limpiarLocalStorage() {
 
     localStorage.clear();
-    console.log("SE HA BORRADO LOCALSTORAGE")
     $("#botonborrar").remove();
     $("#contenedorgrande").html("");
     $("#contenedorgrande").html("");
@@ -204,7 +193,6 @@ function funcionFavoritos() {
             funcionLlamadaHtmlFavoritos(ciudades[i].lat, ciudades[i].lon ,ciudades[i].nombre,ciudades[i].tem_max,ciudades[i].tem_min,ciudades[i].humedad,ciudades[i].codigo);
         }
     } else {
-        console.log("No hay LocalStorage");
         alert("Aun no has guardado ninguna localizacion.")
         geoIP();
     }
@@ -221,12 +209,10 @@ function funcionLlamadaHtmlFavoritos(lat, lon,nombre,tem_max,tem_min,humedad,cod
             if (request.status == 200) {
                 var datos = request.responseText;
                 var jsonDatos = JSON.parse(datos);
-                console.log(jsonDatos);
                 funcionPintarHtmlFavoritos(jsonDatos, lon, lat);
             } else {
                 alert("No tiene conexion a internet, se mostrara lo guardado");
                 funcionPintarHtmlFavoritosSinconexion(lat, lon,nombre,tem_max,tem_min,humedad,codigo);
-                console.log("ERROR");
             }
         }
     }
@@ -319,7 +305,7 @@ function pintarHTMLBienvenida(posicion) {
                     + '% </h3></div>');
 
             } else {
-                console.log("ERROR");
+                alert("UBICACION NO PERMITIDA");
                 
             }
         }
