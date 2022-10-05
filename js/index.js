@@ -117,7 +117,7 @@ function pintarHtml1(datos, lon, lat) {
     var humedad = datos.main.humidity;
     console.log(" TEST: Ciudad: ", nombre, "Temperatura maxima: ", tem_max, "Temperatura minima: ", tem_min, "Humedad: " + humedad + "%", "COD: " + codigo)
     $("#contenedorgrande").html("");
-    $("#contenedorgrande").append('<div align="center" class="divcordenadas" lat="' + lat + '" lon="' + lon + '" ><h1>' + nombre +
+    $("#contenedorgrande").append('<div align="center" class="divcordenadas" lat="' + lat + '" lon="' + lon + '" ><h1 class="nombreciudad">' + nombre +
         '<img class="bandera" src="https://countryflagsapi.com/png/' + codigo + '" "></h1> <img class="imggrande" src="'
         + iconurl + '" alt=""><h3>Temp: ' + Math.trunc(tem_max) + 'º/' + Math.trunc(tem_min) + 'º<br>  Humedad: ' + humedad +
         '% </h3><h4 class="hacedeboton"><img class="cora2" src="img/cora2.png" alt=""></h4></div>');
@@ -156,7 +156,6 @@ function pintarHtml2(datos) {
         var tem_max = element.main.temp_max;
         var tem_min = element.main.temp_min
         var humedad = element.main.humidity;
-        console.log(dt);
         element.weather.forEach(element => {
             var icono = element.icon;
             var iconurl = "http://openweathermap.org/img/w/" + icono + ".png";
@@ -185,7 +184,7 @@ function limpiarLocalStorage() {
     console.log("SE HA BORRADO LOCALSTORAGE")
     $("#botonborrar").remove();
     $("#contenedorgrande").html("");
-    $("#contenedorpequeño").html("");
+    $("#contenedorgrande").html("");
 }
 
 /*PARTE DE GUARDAR EN FAVORITOS*/ 
@@ -193,6 +192,7 @@ function limpiarLocalStorage() {
 
 //Comprueba el localsotrage donde se guarda las favoritas y añade un boton para eliminar
 function funcionFavoritos() {
+    $("#botonborrar").remove();
     $("#contenedorgrande").html("");
     $("#contenedorpequeño").html("");
 
@@ -251,7 +251,8 @@ function funcionPintarHtmlFavoritos(datos, lon, lat) {
     var tem_max = datos.main.temp;
     var tem_min = datos.main.temp_min;
     var humedad = datos.main.humidity;
-    $("#contenedorgrande").append('<div class="divcordenadas" align="center" lat="' + lat + '" lon="' + lon + '" ><h1 class="nombre">' + nombre
+    
+   $("#contenedorgrande").append('<div class="divcordenadas" lat="' + lat + '" lon="' + lon + '" ><br> <h1 class="nombreciudad">' + nombre
         + '<img class="bandera" src="https://countryflagsapi.com/png/' + codigo + '" "></h1> <img class="imagengrandefav" src="'
         + iconurl + '" alt=""><h3>Temp: ' + Math.trunc(tem_max) + 'º/' + Math.trunc(tem_min) + 'º <br>  Humedad: ' + humedad
         + '% </h3></div>');
@@ -266,7 +267,7 @@ function funcionPintarHtmlFavoritosSinconexion(lat, lon,nombre,tem_max,tem_min,h
     var tem_min = tem_min;
     var humedad = humedad;
     var codigo = codigo;
-    $("#contenedorgrande").append('<div class="divcordenadas" align="center" lat="' + lat + '" lon="' + lon + '" ><h1 class="nombre">' + nombre
+    $("#contenedorgrande").append('<div class="divcordenadas" align="center" lat="' + lat + '" lon="' + lon + '" ><h1 class="nombreciudad">' + nombre
         + '</h1><h2> ' + codigo +'</h2> <img class="imagengrandefav" src="'
         + '" alt=""><h3>Temp: ' + Math.trunc(tem_max) + 'º/' + Math.trunc(tem_min) + 'º<br>  Humedad: ' + humedad
         + '% </h3></div>');
@@ -295,7 +296,7 @@ function erroresGeo(error) {
     }
 }
 function pintarHTMLBienvenida(posicion) {
-    $("#contenedorgrande").append('<div class="saludo"> <h1>Bienvenidos</h1><h2>Ubicacion estimada:' + posicion.coords.latitude + '/' + posicion.coords.longitude + '</h2></div>');
+    $("#contenedorgrande").append('<div class="saludo"> <h1 class="nombreciudad">Bienvenidos</h1><h2>Ubicacion estimada:' + posicion.coords.latitude + '/' + posicion.coords.longitude + '</h2></div>');
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (request.readyState == 4) {
@@ -312,7 +313,7 @@ function pintarHTMLBienvenida(posicion) {
                 var tem_max = datos.main.temp;
                 var tem_min = datos.main.temp_min;
                 var humedad = datos.main.humidity;
-                $("#contenedorgrande").append('<div class="divcordenadas" align="center"><h1 class="nombre">' + nombre
+                $("#contenedorgrande").append('<div class="divcordenadas" align="center"><h1 class="nombreciudad">' + nombre
                     + '<img class="bandera" src="https://countryflagsapi.com/png/' + codigo + '" "></h1> <img class="imagengrandefav" src="'
                     + iconurl + '" alt=""><h3>Temp: ' + Math.trunc(tem_max) + 'º/' + Math.trunc(tem_min) + 'º<br>  Humedad: ' + humedad
                     + '% </h3></div>');
