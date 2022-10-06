@@ -97,7 +97,18 @@ El proyecto cuenta con 4 carpetas y 2 archivos en la raiz. Las carpetas son : cs
         'application/x-www-form-urlencoded');
     request.send();
   ```
+ # EXTENSIONES UTILIZADAS EN VISUAL STUDIO CODE
+ 
+ - Live Server v5.7.9 :https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+ ![image](https://user-images.githubusercontent.com/57813147/194202341-d969796c-b9a6-4136-ac47-8d143bfc868f.png)
 
+ - ESLint v2.2.6: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+ ![image](https://user-images.githubusercontent.com/57813147/194202273-6b4391fc-da43-400e-8b2b-95ab701a2a5b.png)
+ 
+ - Error Lens v3.6.0 : https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens
+ ![image](https://user-images.githubusercontent.com/57813147/194202423-96b58cd9-2ae6-40f2-b881-278c85190f4f.png)
+
+ 
  # APLICACION EN FUNCIONAMIENTO
  ![image](https://user-images.githubusercontent.com/57813147/194134439-488f4420-aa67-4e1c-9f46-1561dfd426a0.png)
  ![image](https://user-images.githubusercontent.com/57813147/194134501-e592c340-c539-4489-9880-26424bd12cbd.png)
