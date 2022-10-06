@@ -1,7 +1,7 @@
 var ciudadesGuardadas = new Array();
 var apikey = "14b2f94da8d9c4432f08fede52ad5f52";
 
-/*PARTE DE LLAMADAS AL SERVIDOR*/ 
+/*PARTE DE LLAMADAS AL SERVIDOR*/
 
 //FUNCION QUE AL INTRODUCIR UN NOMBRE, BUSCA LA CIUDAD A LA QUE TE PUEDES ESTAR REFIRIENDO Y SACA SU LONGITUD Y LATITUD NECESARIAS PARA HACER
 //LLAMADAS POSTERIORES Y PODER CONSULTAR EL TIEMPO EN UNA LATITUD Y LONGITUD DETERMINADA
@@ -89,7 +89,7 @@ function ejecutarLlamadaTiempo3h(datos) {
 
 }
 
-/*PARTE DE PINTAR HTML EN PANTALLA*/ 
+/*PARTE DE PINTAR HTML EN PANTALLA*/
 
 
 //PINTA LOS DATOS DE EJECUTARLLAMADATIEMPO() QUE SON LOS CORRESPONDIENTES A 1DIA
@@ -123,8 +123,8 @@ function pintarHtml1(datos, lon, lat) {
         }, 900);
         $(".cora2").remove();
 
-        
-        guardarLocalStorage(lat, lon,nombre,Math.trunc(tem_max),Math.trunc(tem_min),humedad,codigo);
+
+        guardarLocalStorage(lat, lon, nombre, Math.trunc(tem_max), Math.trunc(tem_min), humedad, codigo);
 
 
     });
@@ -154,15 +154,15 @@ function pintarHtml2(datos) {
     });
 }
 
-/*PARTE DE ALMACENAR EN LOCALSTORAGE*/ 
+/*PARTE DE ALMACENAR EN LOCALSTORAGE*/
 
 
 //COMPRUEBA LO GUARDADO EN EL LOCALSTORAGE Y LO RECOGE PARA SEGUIR AÑADIENDO MAS DATOS
-function guardarLocalStorage(lat, lon,nombre,tem_max,tem_min,humedad,codigo) {
+function guardarLocalStorage(lat, lon, nombre, tem_max, tem_min, humedad, codigo) {
     if (localStorage.length > 0) {
         ciudadesGuardadas = JSON.parse(localStorage["ciudades"]);
     }
-    ciudadesGuardadas.push(new Lugar(lat, lon,nombre,tem_max,tem_min,humedad,codigo));
+    ciudadesGuardadas.push(new Lugar(lat, lon, nombre, tem_max, tem_min, humedad, codigo));
     localStorage["ciudades"] = JSON.stringify(ciudadesGuardadas);
 
 
@@ -176,7 +176,7 @@ function limpiarLocalStorage() {
     $("#contenedorgrande").html("");
 }
 
-/*PARTE DE GUARDAR EN FAVORITOS*/ 
+/*PARTE DE GUARDAR EN FAVORITOS*/
 
 
 //Comprueba el localsotrage donde se guarda las favoritas y añade un boton para eliminar
@@ -190,7 +190,7 @@ function funcionFavoritos() {
         var ciudades = JSON.parse(localStorage["ciudades"]);
         $("#barraprincipal").append('<td id="botonborrar"><input type="button" class="buscador" id="botonborrar" value="Borrar" onclick="limpiarLocalStorage()"></input><td>');
         for (let i = 0; i < ciudades.length; i++) {
-            funcionLlamadaHtmlFavoritos(ciudades[i].lat, ciudades[i].lon ,ciudades[i].nombre,ciudades[i].tem_max,ciudades[i].tem_min,ciudades[i].humedad,ciudades[i].codigo);
+            funcionLlamadaHtmlFavoritos(ciudades[i].lat, ciudades[i].lon, ciudades[i].nombre, ciudades[i].tem_max, ciudades[i].tem_min, ciudades[i].humedad, ciudades[i].codigo);
         }
     } else {
         alert("Aun no has guardado ninguna localizacion.")
@@ -199,7 +199,7 @@ function funcionFavoritos() {
 
 }
 //RECOGE DEL STORAGE LA LAT Y LON DE LAS CIUDADES GUARDADAS Y CON ESOS DATOS HACE LAS PETICIONES AL SERVIDOR DE UNA EN UNA
-function funcionLlamadaHtmlFavoritos(lat, lon,nombre,tem_max,tem_min,humedad,codigo) {
+function funcionLlamadaHtmlFavoritos(lat, lon, nombre, tem_max, tem_min, humedad, codigo) {
     var latitud = lat;
     var longitud = lon;
 
@@ -212,7 +212,7 @@ function funcionLlamadaHtmlFavoritos(lat, lon,nombre,tem_max,tem_min,humedad,cod
                 funcionPintarHtmlFavoritos(jsonDatos, lon, lat);
             } else {
                 alert("No tiene conexion a internet, se mostrara lo guardado");
-                funcionPintarHtmlFavoritosSinconexion(lat, lon,nombre,tem_max,tem_min,humedad,codigo);
+                funcionPintarHtmlFavoritosSinconexion(lat, lon, nombre, tem_max, tem_min, humedad, codigo);
             }
         }
     }
@@ -237,8 +237,8 @@ function funcionPintarHtmlFavoritos(datos, lon, lat) {
     var tem_max = datos.main.temp;
     var tem_min = datos.main.temp_min;
     var humedad = datos.main.humidity;
-    
-   $("#contenedorgrande").append('<div class="divcordenadas" lat="' + lat + '" lon="' + lon + '" ><br> <h1 class="nombreciudad">' + nombre
+
+    $("#contenedorgrande").append('<div class="divcordenadas" lat="' + lat + '" lon="' + lon + '" ><br> <h1 class="nombreciudad">' + nombre
         + '<img class="bandera" src="https://countryflagsapi.com/png/' + codigo + '" "></h1> <img class="imagengrandefav" src="'
         + iconurl + '" alt=""><h3>Temp: ' + Math.trunc(tem_max) + 'º/' + Math.trunc(tem_min) + 'º <br>  Humedad: ' + humedad
         + '% </h3></div>');
@@ -246,7 +246,7 @@ function funcionPintarHtmlFavoritos(datos, lon, lat) {
 
 }
 //PINTA POR PANTALLA LAS CIUDADES GUARDADAS EN EL LOCALSTORAGE CUANDO NO HAY INTERNET
-function funcionPintarHtmlFavoritosSinconexion(lat, lon,nombre,tem_max,tem_min,humedad,codigo) {
+function funcionPintarHtmlFavoritosSinconexion(lat, lon, nombre, tem_max, tem_min, humedad, codigo) {
 
     var nombre = nombre;
     var tem_max = tem_max;
@@ -254,7 +254,7 @@ function funcionPintarHtmlFavoritosSinconexion(lat, lon,nombre,tem_max,tem_min,h
     var humedad = humedad;
     var codigo = codigo;
     $("#contenedorgrande").append('<div class="divcordenadas" align="center" lat="' + lat + '" lon="' + lon + '" ><h1 class="nombreciudad">' + nombre
-        + '</h1><h2> ' + codigo +'</h2> <img class="imagengrandefav" src="'
+        + '</h1><h2> ' + codigo + '</h2> <img class="imagengrandefav" src="'
         + '" alt=""><h3>Temp: ' + Math.trunc(tem_max) + 'º/' + Math.trunc(tem_min) + 'º<br>  Humedad: ' + humedad
         + '% </h3></div>');
 
@@ -262,7 +262,7 @@ function funcionPintarHtmlFavoritosSinconexion(lat, lon,nombre,tem_max,tem_min,h
 }
 
 
-/*FUNCIONALIDADES EXTRA*/ 
+/*FUNCIONALIDADES EXTRA*/
 // Para no tener la pagina principal vacia, lo que hace es coger las coord de tu navegador y te imprime por pantalla la ubicacion de donde te encuentres
 function geoIP() {
     var Geo = navigator.geolocation || (window.google && google.gears && google.gears.factory.create('beta.geolocation'));
@@ -306,7 +306,7 @@ function pintarHTMLBienvenida(posicion) {
 
             } else {
                 alert("UBICACION NO PERMITIDA");
-                
+
             }
         }
     }

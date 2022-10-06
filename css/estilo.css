@@ -152,6 +152,7 @@ h2 {
     .saludo h1 {
         font-size: 110%;
     }
+
     h1,
     h2,
     h3 {
@@ -220,7 +221,7 @@ h2 {
     .saludo h1 {
         font-size: 240%;
     }
-    
+
 
     /*PARTE DE FAVORITOS*/
     #contenedorgrande {
@@ -308,7 +309,7 @@ h2 {
 
 @media screen and (min-width: 1301px) and (max-width: 2500px) {
 
-   h1.nombreciudad{
+    h1.nombreciudad {
         font-size: 390%;
     }
 
